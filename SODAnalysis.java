@@ -71,13 +71,22 @@ public class SODAnalysis {
 	String SODId;
 
 	public static void main(String[] args) {
-
-		if (args.length != 1) {
-			throw new IllegalArgumentException("Missing SOD_ID in command line argument");
+		if (args.length != 8) {
+			throw new IllegalArgumentException("Usage: java SODAnalysis <SOD_ID> <userFile> <roleFile> <privsFile> <privToRoleFile> <roleToUserFile> <sodRulesFile> <roleHierarchyFile>");
 		}
 
 		SODAnalysis analysis = new SODAnalysis();
+		
+    // Assign file paths from command-line arguments
 		analysis.SODId = args[0];
+		analysis.userFilePath = args[1];
+		analysis.roleFilePath = args[2];
+		analysis.privsFilePath = args[3];
+		analysis.privToRoleFilePath = args[4];
+		analysis.roleToUserFilePath = args[5];
+		analysis.sodRulesFilePath = args[6];
+		analysis.roleHierarchyFilePath = args[7];
+
 		analysis.setup();
 		analysis.analyzeSODConflicts();
 	}
