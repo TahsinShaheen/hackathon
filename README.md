@@ -33,7 +33,7 @@ This project provides an efficient, scalable, and deterministic method for SOD c
 
 ### HOW TO RUN THIS PROJECT:
 
->java -cp "libs/*;." SODAnalysis <SOD ID>
+>java -cp "libs/*;." SODAnalysis <SOD_ID> <userFile> <roleFile> <privsFile> <privToRoleFile> <roleToUserFile> <sodRulesFile> <roleHierarchyFile>
 
 #### DEPENDENCIES:
 
