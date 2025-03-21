@@ -54,7 +54,7 @@ docker build -t my-java-app .
 ```
 ## HOW TO RUN DOCKER CONTAINER:
 ```
-docker run --rm my-java-app SOD_ID_ARG
+docker run --rm my-java-app  <SOD_ID> <userFile> <roleFile> <privsFile> <privToRoleFile> <roleToUserFile> <sodRulesFile> <roleHierarchyFile>
 ```
 
 
