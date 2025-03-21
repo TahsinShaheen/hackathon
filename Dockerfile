@@ -1,17 +1,19 @@
-FROM openjdk:21-jdk-slim AS build
+
+
+
+
+FROM openjdk:21-slim AS build
 
 WORKDIR /app
 
-COPY . /app
+COPY . .
 
-ENV CLASSPATH ".:/app/libs/*"
+RUN javac -cp ".:libs/*" SODAnalysis.java
 
-RUN javac -cp "$CLASSPATH" SODAnalysis.java
-
-FROM openjdk:21-jre-slim
+FROM openjdk:21-slim
 
 WORKDIR /app
 
 COPY --from=build /app /app
 
-ENTRYPOINT ["java", "SODAnalysis"]
+ENTRYPOINT ["java", "-cp", ".:libs/*", "SODAnalysis"]

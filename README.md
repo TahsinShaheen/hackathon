@@ -59,6 +59,3 @@ docker run --rm my-java-app  <SOD_ID> <userFile> <roleFile> <privsFile> <privToR
 
 
 
-
-
-
